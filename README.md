@@ -11,7 +11,7 @@ This repository contains digital forensics experiments performed as part of cour
 - **Tools Used:** FTK Imager, Computer System, Sample Evidence Data.  
 - **Description:** FTK Imager is a forensic imaging tool used to capture memory (RAM) and disk images while maintaining data integrity. The tool supports formats such as `RAW`, `SMART`, `E01`, and `AFF`. Investigators can use it in live or offline acquisition scenarios with write blockers to prevent evidence tampering.  
 
-➡️ [View FTK Imager](experiments/experiment1.md)
+➡️ [View FTK Imager](digital-forensics-tools/FTK-Imager.md)
 
 ---
 
