@@ -1,0 +1,72 @@
+ Experiment No: 1
+
+ Aim  
+Evidence Acquisition Using AccessData FTK Imager.  
+
+ Apparatus / Software Used  
+- Computer System  
+- Relevant Software Tool  
+- Sample Data/Evidence  
+
+ Procedure  
+
+Ex. No 1: Evidence Acquisition Using AccessData FTK Imager  
+
+Description  
+Forensic Toolkit (FTK) is a computer forensics software product made by AccessData.  
+This is a Windows-based commercial product. For forensic investigations, the same development team has created a **free version** with fewer functionalities.  
+
+The FTK Imager tool is capable of both acquiring and analyzing computer forensic evidence.  
+
+The evidence FTK Imager can acquire can be split into two main parts:  
+1. Acquiring volatile memory  
+2. Acquiring non-volatile memory (Hard disk)  
+
+**Two possible ways this tool can be used in forensic image acquisitions:**  
+- Using FTK Imager portable version in a USB pen drive or HDD and opening it directly from the evidence machine (commonly used in live data acquisition).  
+- Installing FTK Imager on the investigator’s laptop. In this case, the source disk should be mounted into the investigator’s laptop via **write blocker**.  
+ - The write blocker prevents data modification on the source disk and provides read-only access, ensuring integrity.  
+
+
+Acquiring Volatile Memory Using FTK Imager  
+
+FTK Imager allows investigators to collect the complete volatile memory (RAM) of a computer.  
+
+Steps: 
+1. Open FTK Imager and navigate to the volatile memory icon (Capture Memory).  
+2. Options available:  
+   - Pagefile: `pagefile.sys` in Windows is used when RAM is exceeded, and may contain valuable data. Recommended to capture.  
+   - AD1 file: FTK Imager image file format, allows evidence storage for later use.  
+3. Clicking the Capture Memory button starts acquiring volatile memory.  
+
+> Note: Once acquisition completes, the destination folder will have the acquired memory with the extension `.mem`.  
+
+Acquiring Non-Volatile Memory (Disk Image) Using FTK Imager  
+
+This tool can also be used to collect a disk image.  
+
+Steps:
+1. Open FTK Imager → Navigate to **Create Disk Image.  
+2. Select the source to acquire.  
+   - FTK Imager can acquire physical drives, logical drives (partitions), image files, folders, or CDs/DVDs.  
+   - For external HDDs, connect via a write blocker and use the Logical Drive option.  
+3. Select Physical Drive → Choose the drive → Click Finish.  
+
+Supported Disk Image Formats: 
+- Raw (dd): Most common, contains no metadata, simple bitstream.  
+- SMART: Linux-based format with compression and headers.  
+- E01: Proprietary EnCase format. Includes case info, MD5 hash, examiner details, notes, etc.  
+- AFF (AFF4): Open forensic format, prevents vendor lock-in.  
+
+4. Enter case details (examiner’s name, notes, etc.).  
+5. Add image destination, file name, and fragment size.  
+   - Image Fragment Size (MB): Splits into multiple files. Set to `0` to save as one file.  
+6. Select Verify images after creation → ensures hash integrity but increases acquisition time.  
+7. Click Start → Acquisition begins.  
+
+> Note: Once acquisition completes, a **text file** is created with all acquisition details. Hash values are matched for integrity verification.  
+
+---
+
+Result  
+Successfully acquired volatile memory and non-volatile disk image using AccessData FTK Imager, ensuring forensic integrity.  
